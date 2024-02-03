@@ -17,22 +17,31 @@
     <div class="container">
         <div class="content">
             <h1>How Much Faster?</h1>
-            <p>Under construction.</p>
 
-            <div class="form-group">
-                <input class="form-field" type="text" placeholder="domain.tld">
-            </div>
+            <p>A simple calculator for developers, which tells you how much faster/better you made something. Sure, it's not a complicated formula... but if you're anything like me, you have to look it up nearly every time you need it.</p>
 
-            <div class="form-group form-hint-pre">
-                <span>https://</span>
-                <input class="form-field" type="text" placeholder="domain.tld">
-            </div>
+            <p>The measurements can be any numeric value: response times, payload sizes in Kb/Mb, etc. The calculator works with increases as well as reductions, so you can also work out e.g. throughput improvements.</p>
 
-            <div class="form-group form-hint-post">
-                <input class="form-field" type="text" placeholder="domain.tld">
-                <span>https://</span>
-            </div>
-
+            <form class="controls">
+                <div>
+                    The old measurement was
+                    <label class="input-sizer">
+                        <span class="visually-hidden">Original Value: </span>
+                        <input type="text" name="original" inputmode="numeric" pattern="[0-9\.]*" data-expand size="3"
+                            placeholder="100" required>
+                    </label>
+                    and the new measurement is
+                    <label class="input-sizer">
+                        <span class="visually-hidden">Final Value: </span>
+                        <input type="text" name="final" inputmode="numeric" pattern="[0-9\.]*" data-expand size="3"
+                            placeholder="100" required>
+                    </label>.
+                </div>
+                <div>
+                    <span class="result-placeholder">Please fill in the measurements.</span>
+                    <span class="result hidden">&nbsp;</span>
+                </div>
+            </form>
         </div>
     </div>
 
