@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" type="text/css" href="/styles.css?v=2024-02-04">
+    <link rel="stylesheet" type="text/css" href="/styles.css?v=2024-02-04-09-30">
 </head>
 
 <body>
@@ -18,9 +18,7 @@
         <div class="content">
             <h1>How Much Faster?</h1>
 
-            <p>This simple calculator (aimed at developers) gives you both percentage and multiplier improvement figures. It's
-                not a complicated formula, but if you're anything like me, you have to look it up almost every time
-                you need it...</p>
+            <p>A simple calculator (aimed at developers) to work out* percentage and multiplier improvement figures.</p>
 
             <p>Measurements can be any <strong>numeric</strong> value: response times, payload sizes in Kb/Mb, etc. The calculator
                 works with increases as well as reductions, so you can also work out e.g. throughput improvements.</p>
@@ -29,7 +27,7 @@
                 <div class="inputs">
                     <span class="input-group">
                         <span class="mobile-hidden">The old measurement was</span>
-                        <span class="desktop-hidden">Old measurement: </span>
+                        <span class="desktop-hidden">Old value: </span>
                         <span class="input-sizer">
                             <input type="text" name="original" inputmode="numeric" pattern="[0-9\.]*" data-expand
                                 size="3" placeholder="100" aria-label="Old Measurement Value" required>
@@ -37,7 +35,7 @@
                     </span>
                     <span class="input-group">
                         <span class="mobile-hidden">and the new measurement is</span>
-                        <span class="desktop-hidden">New measurement:</span>
+                        <span class="desktop-hidden">New value:</span>
                         <span class="input-sizer">
                             <input type="text" name="final" inputmode="numeric" pattern="[0-9\.]*" data-expand size="3"
                                 placeholder="100" aria-label="New Measurement Value" required>
@@ -47,10 +45,12 @@
                 <div class="result-placeholder">Please fill in the measurements.</div>
                 <div class="result hidden">&nbsp;</div>
             </form>
+
+            <p class="note">* It's not a complicated formula—but if you're anything like <a href="https://markb.uk">me</a>, you have to look it up almost every time you need it...</p>
         </div>
     </div>
 
-    <script src="/main.js?v=2024-02-04"></script>
+    <script src="/main.js?v=2024-02-04-09-30"></script>
 </body>
 
 </html>
