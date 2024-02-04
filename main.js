@@ -31,7 +31,7 @@ var HMF = (function () {
         const percentage = calculatePercentageDifference(original, final);
         const speedup = original > final ? original / final : final / original;
 
-        result.innerText = `That's a ${percentage.toFixed(2)}% ${percentage < 0 ? 'reduction' : 'increase'}, or ${speedup.toFixed(1)}x the baseline.`;
+        result.innerText = `That's a ${Math.abs(percentage).toFixed(2)}% ${percentage < 0 ? 'reduction' : 'increase'}, or ~${speedup.toFixed(1)}x the baseline (~${(speedup - 1).toFixed(1)}x faster).`;
 
         result.classList.remove('hidden');
         resultPlaceholder.classList.add('hidden');

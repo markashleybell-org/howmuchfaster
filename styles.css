@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap');
 
 :root {
+    --mobile-breakpoint: 940px;
+
+    --gutter: 20px;
+    --gutter-half: calc(var(--gutter) / 2);
+    --gutter-double: calc(var(--gutter) * 2);
+
     --secondary: #523263;
     --secondary-light: #88629e;
 
     --page-background: #75467a;
-    --content-background: #a87dad;
+    --content-background: #b591ba;
 
     --input-border: var(--secondary);
     --input-background: #c19ac6;
@@ -74,14 +80,16 @@ body {
 
 .content {
     background-color: var(--content-background);
-    padding: 40px;
+    margin: var(--gutter-double);
+    padding: var(--gutter-double);
     border-radius: 5px;
     text-align: center;
     max-width: 1000px;
+    box-shadow: 0px 0px 4px 0px #5f3064;
 }
 
 .content > p {
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 
 .visually-hidden {
@@ -97,15 +105,49 @@ body {
 
 .controls {
     border-top: solid 1px var(--secondary-light);
-    margin-top: 20px;
+    margin-top: var(--gutter);
     font-size: 1.4em;
 }
 
-.controls div {
+.controls .inputs {
+    margin-top: var(--gutter-double);
+}
+
+@media (min-width: 940px) {
+    .controls .inputs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.input-group {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 30px;
+}
+
+.desktop-hidden {
+    text-align: left;
+}
+
+@media (min-width: 940px) {
+    .desktop-hidden {
+        display: none;
+    }
+}
+
+@media (max-width: 940px) {
+    .mobile-hidden {
+        display: none;
+    }
+
+    .input-group {
+        justify-content: space-between;
+    }
+
+    .input-group:not(:first-child) {
+        margin-top: var(--gutter-half);
+    }
 }
 
 .input-sizer {
@@ -120,21 +162,8 @@ body {
     background-color: var(--input-background);
 }
 
-.input-sizer.stacked {
-    padding: 0.5em;
-    align-items: stretch;
-}
-
-.input-sizer.stacked::after,
-.input-sizer.stacked input,
-.input-sizer.stacked textarea {
-    grid-area: 2/1;
-}
-
 .input-sizer::after,
-.input-sizer input,
-.input-sizer textarea,
-.input-sizer select {
+.input-sizer input {
     width: auto;
     min-width: 1em;
     grid-area: 1/2;
@@ -147,10 +176,6 @@ body {
     -moz-appearance: none;
     appearance: none;
     border: none;
-}
-
-.input-sizer span {
-    padding: 0.25em;
 }
 
 .input-sizer::after {
@@ -172,28 +197,24 @@ body {
     outline: none;
 }
 
-.input-sizer > span {
-    text-transform: uppercase;
-    font-size: 0.8em;
-    font-weight: bold;
-}
-
 .input-sizer input::placeholder {
     color: var(--input-placeholder-text);
 }
 
 .result-placeholder {
-    border: solid 1px var(--content-background);
+    border: solid 2px var(--content-background);
     color: var(--result-placeholder-text);
-    padding: 10px 20px;
+    margin-top: var(--gutter-double);
+    padding: var(--gutter-half) var(--gutter);
 }
 
 .result {
-    border: solid 1px var(--input-border);
+    border: solid 2px #396332;
     background: #ffffff;
     color: #346b3e;
-    padding: 10px 20px;
-    border-radius: 3px;
+    margin-top: var(--gutter-double);
+    padding: var(--gutter-half) var(--gutter);
+    border-radius: 4px;
     font-weight: 500;
 }
 

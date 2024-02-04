@@ -18,29 +18,34 @@
         <div class="content">
             <h1>How Much Faster?</h1>
 
-            <p>A simple calculator for developers, which tells you how much faster/better you made something. Sure, it's not a complicated formula... but if you're anything like me, you have to look it up nearly every time you need it.</p>
+            <p>This simple calculator (aimed at developers) gives you both percentage and multiplier improvement figures. It's
+                not a complicated formula, but if you're anything like me, you have to look it up almost every time
+                you need it...</p>
 
-            <p>The measurements can be any numeric value: response times, payload sizes in Kb/Mb, etc. The calculator works with increases as well as reductions, so you can also work out e.g. throughput improvements.</p>
+            <p>Measurements can be any <strong>numeric</strong> value: response times, payload sizes in Kb/Mb, etc. The calculator
+                works with increases as well as reductions, so you can also work out e.g. throughput improvements.</p>
 
             <form class="controls">
-                <div>
-                    The old measurement was
-                    <label class="input-sizer">
-                        <span class="visually-hidden">Original Value: </span>
-                        <input type="text" name="original" inputmode="numeric" pattern="[0-9\.]*" data-expand size="3"
-                            placeholder="100" required>
-                    </label>
-                    and the new measurement is
-                    <label class="input-sizer">
-                        <span class="visually-hidden">Final Value: </span>
-                        <input type="text" name="final" inputmode="numeric" pattern="[0-9\.]*" data-expand size="3"
-                            placeholder="100" required>
-                    </label>.
+                <div class="inputs">
+                    <span class="input-group">
+                        <span class="mobile-hidden">The old measurement was</span>
+                        <span class="desktop-hidden">Old measurement: </span>
+                        <span class="input-sizer">
+                            <input type="text" name="original" inputmode="numeric" pattern="[0-9\.]*" data-expand
+                                size="3" placeholder="100" aria-label="Old Measurement Value" required>
+                        </span>
+                    </span>
+                    <span class="input-group">
+                        <span class="mobile-hidden">and the new measurement is</span>
+                        <span class="desktop-hidden">New measurement:</span>
+                        <span class="input-sizer">
+                            <input type="text" name="final" inputmode="numeric" pattern="[0-9\.]*" data-expand size="3"
+                                placeholder="100" aria-label="New Measurement Value" required>
+                        </span><span class="mobile-hidden">.</span>
+                    </span>
                 </div>
-                <div>
-                    <span class="result-placeholder">Please fill in the measurements.</span>
-                    <span class="result hidden">&nbsp;</span>
-                </div>
+                <div class="result-placeholder">Please fill in the measurements.</div>
+                <div class="result hidden">&nbsp;</div>
             </form>
         </div>
     </div>
