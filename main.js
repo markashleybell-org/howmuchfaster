@@ -3,6 +3,12 @@ var HMF = (function () {
         return ((final - original) / original) * 100;
     }
 
+    function calculatePercentageDifferenceD(original, final) {
+        const originalDecimal = new Decimal(original);
+        const finalDecimal = new Decimal(final);
+        return finalDecimal.minus(originalDecimal).dividedBy(originalDecimal).times(new Decimal(100));
+    }
+
     Array.from(document.querySelectorAll('[data-expand]'), input => {
         let parent = input.parentNode;
         function updateSize() {
@@ -41,6 +47,7 @@ var HMF = (function () {
     finalInput.addEventListener('input', validate);
 
     return {
-        calculatePercentageDifference
+        calculatePercentageDifference,
+        calculatePercentageDifferenceD
     };
 })();
